@@ -25,5 +25,5 @@ TestWidget::~TestWidget() {
 }
 
 void TestWidget::ButtonClicked() {
-    QMessageBox::information(this, "Information:", "You clicked on a box");
+    QMessageBox::information(this, "Information", "You clicked on a box");
 }

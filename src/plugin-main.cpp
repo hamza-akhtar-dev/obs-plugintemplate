@@ -30,12 +30,16 @@ bool obs_module_load(void)
 {
 	QWidget *main_window = (QWidget *)obs_frontend_get_main_window();
 
-	TestWidget *testWidget = new TestWidget(main_window);
+	void *testWidget = new TestWidget(main_window);
 
-	obs_frontend_add_custom_qdock(nullptr, testWidget);
+	const char* dockId = "ss-explorer";
+	const char* dockTitle = "Screenshot Explorer";
 
-	obs_log(LOG_INFO, "plugin loaded successfully (version %s)",
-		PLUGIN_VERSION);
+	bool status = obs_frontend_add_dock_by_id(dockId, dockTitle, testWidget);
+
+	obs_log(LOG_INFO, "docking status: %d", status);
+	obs_log(LOG_INFO, "plugin loaded successfully (version %s)", PLUGIN_VERSION);
+
 	return true;
 }
 
