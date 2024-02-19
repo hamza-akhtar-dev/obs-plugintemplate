@@ -7,6 +7,7 @@
 #include <QDockWidget>
 #include <QPushButton>
 #include <QHboxLayout>
+#include <QVboxLayout>
 #include <QMessageBox>
 #include <QLabel>
 #include <QPixmap>
@@ -22,8 +23,6 @@ class TestWidget : public QDockWidget {
         QPushButton *button = new QPushButton();
         void addImages();
         QLabel *imageLabels[5];
-    private slots:
-        void ButtonClicked();
 };
 
 #endif

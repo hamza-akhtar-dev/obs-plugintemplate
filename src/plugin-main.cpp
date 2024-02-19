@@ -37,8 +37,8 @@ bool obs_module_load(void)
 
 	bool status = obs_frontend_add_dock_by_id(dockId, dockTitle, testWidget);
 
-	obs_log(LOG_INFO, "plugin loaded successfully (version %s)",
-		PLUGIN_VERSION);
+	obs_log(LOG_INFO, "plugin loaded successfully (version %s), STATUS: %d", PLUGIN_VERSION, status);
+		
 	return true;
 }
 

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.16...3.26)
 
 include("${CMAKE_CURRENT_SOURCE_DIR}/cmake/common/bootstrap.cmake" NO_POLICY_SCOPE)
+add_definitions(-DCURRENT_SOURCE_DIR="${CMAKE_CURRENT_SOURCE_DIR}")
+
 
 project(${_name} VERSION ${_version})
 
