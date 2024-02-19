@@ -8,6 +8,8 @@
 #include <QPushButton>
 #include <QHboxLayout>
 #include <QMessageBox>
+#include <QLabel>
+#include <QPixmap>
 
 class TestWidget : public QDockWidget {
         Q_OBJECT
@@ -18,6 +20,8 @@ class TestWidget : public QDockWidget {
         void buttonClicked();
         QWidget *parent = nullptr;
         QPushButton *button = new QPushButton();
+        void addImages();
+        QLabel *imageLabels[5];
     private slots:
         void ButtonClicked();
 };

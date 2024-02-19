@@ -30,9 +30,14 @@ bool obs_module_load(void)
 {
 	QWidget *main_window = (QWidget *)obs_frontend_get_main_window();
 
-	TestWidget *testWidget = new TestWidget(main_window);
+	const char *dockId = "ScreenShot";
+	const char *dockName = "ScreenShot";
 
-	obs_frontend_add_custom_qdock(nullptr, testWidget);
+	void *testWidget = new TestWidget(main_window);
+	
+	bool success = obs_frontend_add_dock_by_id(dockId, dockName, testWidget);
+
+	obs_log(LOG_INFO, "STATUS : %d", success);
 
 	obs_log(LOG_INFO, "plugin loaded successfully (version %s)",
 		PLUGIN_VERSION);
